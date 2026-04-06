@@ -1,0 +1,161 @@
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Felipe Augusto Rodrigues- Portfólio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: #000;
+      color: #d4af37;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: #d4af37; transition: color 0.3s; }
+    a:hover { color: #fff; }
+
+    /* CABEÇALHO FR*/
+    header {
+      background-color: #000;
+      padding: 30px 50px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-bottom: 1px solid #d4af37;
+    }
+
+    header h1 {
+      font-size: 3em;
+      letter-spacing: 3px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    nav {
+      display: flex;
+      gap: 30px;
+      font-size: 1.1em;
+      font-weight: 500;
+    }
+
+    nav a {
+      position: relative;
+      padding-bottom: 5px;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #d4af37;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    main { padding: 50px; max-width: 1000px; margin: auto; }
+
+    .section-title { font-size: 2em; margin-bottom: 20px; border-bottom: 2px solid #d4af37; display: inline-block; padding-bottom: 5px; }
+    .cards { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 30px; }
+    .card {
+      background: #111;
+      border: 1px solid #d4af37;
+      border-radius: 12px;
+      padding: 30px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 0 20px #d4af37; }
+    .card h2 { margin-bottom: 15px; font-size: 1.5em; }
+    .card p { margin-bottom: 15px; }
+    .card button {
+      padding: 10px 25px;
+      border: none;
+      border-radius: 8px;
+      background: #d4af37;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .card button:hover { background: #fff; }
+    .card span { display: block; margin-top: 10px; font-size: 0.9em; color: #fff; }
+
+    footer { text-align: center; padding: 30px 0; border-top: 1px solid #d4af37; margin-top: 50px; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Felipe Augusto Rodrigues</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre">
+      <h2 class="section-title">Sobre Mim</h2>
+      <p>Estudante de Análise e Desenvolvimento de Sistemas, apaixonado por tecnologia e desenvolvimento web. Meu objetivo é criar experiências digitais elegantes e funcionais, com atenção a detalhes e design premium.</p>
+    </section>
+
+    <section id="habilidades">
+      <h2 class="section-title">Minhas Habilidades</h2>
+      <div class="cards">
+        <div class="card">
+          <h2>HTML & CSS</h2>
+          <p>Criação de páginas elegantes, responsivas e visuais premium.</p>
+          <button onclick="mostrarInfo('html')">Saiba Mais</button>
+          <span id="html"></span>
+        </div>
+        <div class="card">
+          <h2>JavaScript</h2>
+          <p>Interatividade básica a avançada, lógica e animações sutis.</p>
+          <button onclick="mostrarInfo('js')">Saiba Mais</button>
+          <span id="js"></span>
+        </div>
+        <div class="card">
+          <h2>Design & Layout</h2>
+          <p>Foco em experiência do usuário e tipografia elegante.</p>
+          <button onclick="mostrarInfo('design')">Saiba Mais</button>
+          <span id="design"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" style="margin-top:50px;">
+      <h2 class="section-title">Contato</h2>
+      <p>Email: felipeaugustorodrigues27@gmail.com 
+      </p>
+      <p>Telefone: (19974102076) </a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Felipe Augusto Rodrigues. Todos os direitos reservados 👍 .
+  </footer>
+
+  <script>
+    function mostrarInfo(id) {
+      let info = '';
+      if(id === 'html') {
+        info = 'HTML & CSS são a base de qualquer site, usados para estruturar e estilizar páginas, garantindo que sejam responsivas e elegantes.';
+      } else if(id === 'js') {
+        info = 'JavaScript adiciona interatividade ao site, permitindo ações dinâmicas, validação de formulários e animações leves.';
+      } else if(id === 'design') {
+        info = 'Design & Layout envolvem tipografia, cores e organização visual, garantindo que o usuário tenha uma experiência agradável e profissional.';
+      }
+      document.getElementById(id).innerText = info;
+    }
+  </script>
+
+</body>
+</html>
